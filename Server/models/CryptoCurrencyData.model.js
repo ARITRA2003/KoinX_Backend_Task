@@ -3,7 +3,8 @@ import mongoose from "mongoose";
 const cryptoSchema = new mongoose.Schema({
     coin: {
         type: String,
-        required: true
+        required: true,
+        enum: ["bitcoin", "matic-network", "ethereum"]
     },
     price: {
         type: Number,
@@ -17,9 +18,10 @@ const cryptoSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    timestamp: {
-        type: Date,
-        default: Date.now,
+    createdAt : {
+        type : Date,
+        default : Date.now,
+        expires : 86400,
         select:false
     }
 });

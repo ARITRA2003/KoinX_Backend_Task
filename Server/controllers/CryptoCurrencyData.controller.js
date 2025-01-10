@@ -13,7 +13,7 @@ export const CryptoDataStats = async(req, res,next) => {
     const {coin} = req.query;
 
     try {
-        const latestData = await CryptoCurrencyDataModel.findOne({ coin }).sort({ timestamp: -1 });
+        const latestData = await CryptoCurrencyDataModel.findOne({ coin }).sort({ createdAt: -1 });
         
         if (!latestData) {
           return res.status(404).json({ error: 'No data found for the requested cryptocurrency.' });
@@ -38,7 +38,7 @@ export const CryptoDataDeviation = async(req,res,next) =>{
   try {
     // Fetch available records, up to 100
     const records = await CryptoCurrencyDataModel.find({ coin })
-      .sort({ timestamp: -1 })
+      .sort({ createdAt: -1 })
       .limit(100)
       .select('price -_id');
 
