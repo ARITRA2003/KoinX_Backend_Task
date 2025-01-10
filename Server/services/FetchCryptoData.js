@@ -1,8 +1,9 @@
 import axios from "axios"
 
+//Task - 1
 export const  fetchCryptoData = async()=>{
   const url = process.env.COINGECKO_API;
-  console.log(url);
+  // console.log(url);
   const params = {
     vs_currency: 'usd',
     ids: 'bitcoin,matic-network,ethereum',
@@ -21,3 +22,4 @@ export const  fetchCryptoData = async()=>{
     return [];
   }
 }
+
