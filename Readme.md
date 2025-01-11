@@ -2,6 +2,14 @@
 
 This application provides an API for fetching and managing cryptocurrency data, including the latest statistics and standard deviation of prices for selected cryptocurrencies. It uses a MongoDB database to store records and supports Bitcoin, Ethereum, and Matic Network.
 
+## Deployment Link
+
+The API is deployed and accessible at:
+
+[https://koinx-backend-task-1.onrender.com/](https://koinx-backend-task-1.onrender.com/)
+
+---
+
 ## Database Model
 
 ### **CryptoCurrencyData Model**
@@ -39,7 +47,7 @@ GET /api/stats
 
 #### **Example Request**
 ```
-GET /api/stats?coin=matic-network
+GET {{base-url}}/stats?coin=matic-network
 ```
 
 #### **Example Response**
@@ -72,7 +80,7 @@ GET /api/deviation
 
 #### **Example Request**
 ```
-GET /api/deviation?coin=bitcoin
+GET {{base-url}}/deviation?coin=bitcoin
 ```
 
 #### **Example Response**
